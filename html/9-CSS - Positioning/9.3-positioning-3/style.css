@@ -1,0 +1,40 @@
+div {
+  width: 100px;
+  height: 100px;
+  margin: 50px;
+  border: 4px solid black;
+  font-size: 16px;
+}
+
+#one {
+  width: 280px;
+  height: 200px;
+}
+
+#two {
+  background-color: white;
+  position: absolute;
+  top: 130px;
+  left: 150px;
+  width: 200px;
+  height: 200px;
+  z-index: 1;
+}
+
+#three {
+  background-color: white;
+  position: absolute;
+  width: 600px;
+  height: 160px;
+  z-index: 2;
+}
+
+#four {
+  background-color: white;
+  position: absolute;
+  width: 100px;
+  height: 600px;
+  left: 480px;
+  top: 0;
+  z-index: 4;
+}

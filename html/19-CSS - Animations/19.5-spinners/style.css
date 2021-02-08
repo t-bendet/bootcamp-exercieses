@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.box{
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+  height: 300px;
+  width: 300px;
+  margin: 20px;
+}
+/* circle  */
+.circle{
+  position: relative;
+  border-radius: 100%;
+  border: solid 5px darkgrey;
+  width: 150px;
+  height: 150px;
+  border-left: #2fdfbc solid 5px;
+  animation: circle 1s infinite linear;
+}
+.black {
+  border: #2fdfbc solid 5px;
+  border-left: #000 solid 5px;
+  border-bottom: #000 solid 5px;
+  border-top: #000;
+}
+@keyframes circle {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* balls  */
+.ball{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: darkgrey;
+  position: relative;
+}
+/* colorfull  */
+#colorfull .ball{
+  animation: colorfull 1s infinite;
+}
+#colorfull .color-2{
+  animation-delay: 0.5s;
+}
+#colorfull .color-3{
+  animation-delay: 0.75s;
+}
+@keyframes colorfull{
+  to{
+    background-color:#2fdfbc;
+  }
+}
+/* bounce  */
+#bounce .ball{
+  animation: bounce 1s;
+  animation-iteration-count: infinite;
+}
+#bounce .bo-2{
+  animation-delay: 0.5s;
+}
+#bounce .bo-3{
+  animation-delay: 0.75s;
+}
+@keyframes bounce {
+  0%{
+    transform: initial;
+  }
+  30%{
+    transform: translateY(-50px);
+  }
+  60%{
+    transform: initial;
+  }
+}

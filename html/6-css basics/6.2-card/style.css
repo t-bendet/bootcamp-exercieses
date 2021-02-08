@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(182, 77, 77);
+    margin: 0;
+}
+
+#image{
+    background-image: url("https://giantbomb1.cbsistatic.com/uploads/original/1/14283/368585-mordor.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;   
+    background-color: white;
+    height: 400px;
+}
+

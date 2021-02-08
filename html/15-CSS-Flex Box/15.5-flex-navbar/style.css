@@ -1,0 +1,31 @@
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container{
+  background-color: blueviolet;
+  height: 100px;
+  padding: 20px;
+  margin: auto 5px;
+  border: 3px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a{
+  text-decoration: none;
+  color: azure;
+}
+
+li{
+  list-style: none;
+  padding: 15px;
+}
+
+.list-wrap{
+  display: flex;
+}

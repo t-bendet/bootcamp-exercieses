@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: blueviolet;
+    height: 100vh;
+    max-height: 100vh;
+}
+.container{
+    border: dotted 5px silver;
+    width: 40%;
+    margin:auto;
+    text-align: center;
+    max-height: 100vh;
+
+}
+
+h1{
+    font-size: 20px;
+}
+
+p{
+    font-size: 15px;
+}
+
+@media(min-width:500px){
+    h1{
+        font-size: 4vw;
+    }
+    
+    p{
+        font-size: 3vw;
+    }
+
+}
+
+@media (min-width: 1750px) {
+    h1 {
+        font-size: 70px;
+      }
+    p{
+        font-size: 52.5px;
+    }  
+
+    }
+
+

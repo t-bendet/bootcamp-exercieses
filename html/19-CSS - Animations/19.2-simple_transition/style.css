@@ -1,0 +1,38 @@
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box{
+  position: relative;
+  background-color: blue;
+  height: 300px;
+  width: 300px;
+  
+
+}
+.box::before{
+  content: "";
+  position: absolute;
+  right: 100%;
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  animation: simple 2s 1s  infinite ease-in;
+}
+
+
+@keyframes simple {
+
+  to {
+    right: 0;
+    background-color: yellow;
+  }
+}

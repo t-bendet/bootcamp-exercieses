@@ -1,0 +1,105 @@
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+.container{
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  color: black;
+  border: 3px solid black;
+  height: 150px;
+  font-size: 46px;
+  text-align: center;
+  width: 350px;
+  overflow: hidden;
+}
+/* rotate  */
+#rotate::after{
+  content: "";
+  position: absolute;
+  height: 100%;
+  bottom:250px;
+  right: 100px;
+  width: 100%;
+  transition-property: all;
+  transition-duration: 2s;
+  transition-timing-function: ease-in-out;
+  transform: rotate(90deg);
+}
+#rotate:hover::after {
+  transform: rotate(180deg) translateX(-100px) translateY(-250px);
+  background-color:yellow;
+  z-index: -10;
+}
+/* translate  */
+#translate::after{
+  content: "";
+  position: absolute;
+  height: 100%;
+  right: 350px;
+  width: 100%;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+#translate:hover::after {
+  transform: translate(350px);
+  background-color:darkslategray;
+  z-index: -10;
+}
+/* translate-Y*/
+#translate-y::after{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  content: "YEAH!";
+  position: absolute;
+  bottom: 150px;
+  height: 100%;
+  width: 100%;
+  transition-property: all;
+  transition-duration: 1s;
+}
+#translate-y:hover::after {
+  transform: translateY(150px);
+  background-color:red;
+}
+/* scale*/
+#scale{
+  overflow: visible;
+}
+#scale::after{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  content: "Scale and Opacity";
+  position: absolute;
+  color: white;
+  background-color:black;
+  height: 200%;
+  width: 200%;
+  transform:translateX(-25%);
+  transition-property: all;
+  transition-duration: 2s;
+  transition-timing-function: ease-in-out;
+  opacity: 0;
+  font-size: 90px;
+
+}
+#scale:hover::after {
+  transform: scale(0.5) translateX(-350px);
+  opacity: 1;
+}
+
+
+

@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+  padding: 10px;
+
+}
+.box{
+  position: relative;
+  background-color: blue;
+  height: 100px;
+  width: 100px;
+}
+
+.box::after{
+  content: "";
+  position: absolute;
+  left: 100%;
+  background-color: red;
+  height: 100%;
+  width: 50%;
+}

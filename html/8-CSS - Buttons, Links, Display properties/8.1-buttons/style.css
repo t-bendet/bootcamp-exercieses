@@ -1,0 +1,153 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color:darkslategray;   
+  color: white ;
+}
+
+#container{
+  width: 80%;
+  text-align: center;
+  margin: 15px auto;
+}
+
+.box{
+  margin: 50px;
+}
+
+h2{
+  font-family :'Times New Roman', Times, serif;
+  font-size: 30px;
+  font-weight: 100;
+}
+
+button{
+  display: inline-block;
+  margin-right: 20px;
+  color:white;
+  border-width: 3px;
+  border-style: solid;
+}
+
+
+
+.register{
+  width: 130px;
+  font-size: 20px;
+  padding: 5px 20px;
+}
+
+
+.clear{
+  width: 90px;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.submit{
+  width: 80px;
+  font-size: 14px;
+  padding: 4px;
+}
+
+.round{
+  border-radius: 20px;
+}
+
+
+
+#green-btn{
+  background-color: forestgreen;
+  border-color: forestgreen;
+}
+
+#red-btn{
+  background-color: red;
+  border-color: red;
+}
+
+#blue-btn{
+  background-color: blue;
+  border-color: blue;
+}
+
+#orange-btn{
+  background-color: orange;
+  border-color: orange;
+}
+
+#yellow-btn{
+  background-color: yellow;
+  border-color: yellow;
+}
+
+#gray-btn{
+  background-color: gray;
+  border-color:gray;
+}
+
+.ghost{
+  background-color: darkslategray;
+}
+
+#green-boarder{
+  border-color: forestgreen;
+}
+
+#green-boarder:hover{
+  background-color: forestgreen;
+}
+
+#red-boarder{
+  border-color: red;
+}
+
+#red-boarder:hover{
+  background-color: red;
+}
+
+#blue-boarder{
+  border-color: blue;
+}
+
+#blue-boarder:hover{
+  background-color:blue;
+}
+
+#orange-boarder{
+  border-color: orange;
+}
+
+#orange-boarder:hover{
+  background-color:orange;
+}
+
+
+#yellow-boarder{
+  border-color: yellow;
+}
+
+#yellow-boarder:hover{
+  background-color: yellow;
+}
+
+#gray-boarder:hover{
+  background-color: gainsboro;
+}
+
+.bright:hover{
+  filter: brightness(120%) saturate(120%);
+}
+
+
+
+
+
+
+
+
+
+
+
