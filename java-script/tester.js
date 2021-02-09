@@ -1,12 +1,3 @@
-const x = 6;
-let z;
-switch (x) {
-  case 5:
-    z = 'its 5';
-    break;
-  case 6:
-    z = 'its 6';
-    break;  
-}
-
-console.log(z)
+const arr = [1,2,3,4];
+let e = arr.slice();
+console.log(arr,e)

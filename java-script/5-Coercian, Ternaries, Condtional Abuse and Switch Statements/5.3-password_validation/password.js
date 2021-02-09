@@ -8,10 +8,9 @@ const validation1 = (password) =>{
 }
 console.log(validation1('taliswhat?'))
 // 2
-const validation2 = (password) =>{
-  return password.length > 7 ? 'strong' : 'weak';
+const validation2 = (password) => password.length > 7 ? 'strong' : 'weak';
 
-}
+
 console.log(validation2('taliswhat?'))
 //3
 const validation3 = (password) =>{
