@@ -1,3 +1,5 @@
-const arr = [1,2,3,4];
-let e = arr.slice();
-console.log(arr,e)
+let a = 1;
+let b = a;
+console.log(a,b)
+ a = 5; 
+console.log(a,b)
