@@ -14,11 +14,7 @@ const validation2 = (password) => password.length > 7 ? 'strong' : 'weak';
 console.log(validation2('taliswhat?'))
 //3
 const validation3 = (password) =>{
-  if(password.length > 7 && password.includes('?')) {
-    return 'strong'
-  } else {
-    return 'weak'
-  }
+  return password.length && 'strong' || 'weak';
 }
 console.log(validation3('taliswhat?'))
 //4

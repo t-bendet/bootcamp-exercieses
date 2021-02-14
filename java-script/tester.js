@@ -1,26 +1,5 @@
-let obj1 = {
-  name: 'tal',
-  age:34,
-  x:{
-    z:6
-  }
-};
-let obj2 = {
-  dog: 'tal',
-  win:34,
-};
-let obj3 = {
-  cool: true,
+const sortingFunk2 = (first,second) => {
+  return first.length < second.length && -1 || first.length > second.length && 1 || 0;
 };
 
-const po = {...obj1,...obj2,...obj3};
-
-
-for (const [key, value] of Object.entries(po)) {
-  console.log(value,key)
-}
-
-
-
-
-
+console.log(sortingFunk2('e12','ert'))
