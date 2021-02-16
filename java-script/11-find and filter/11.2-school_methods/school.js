@@ -25,34 +25,22 @@ const school = {
     return this[type].find(obj => obj.id == id);
   },
   assignStudent(id, subject) {
-    const student = this.findPerson('students', id);
-    console.log(student)
-    const teacher = this.teachers.find((teacher) =>
-        teacher.subjects.includes(subject)
-    );
-    if (teacher && teacher.capacityLeft) {
-        teacher.students.push(student);
-        teacher.capacityLeft -= 1;
-
-    } else {
-        console.log('Sorry, no available teachers left');
+    const student = this.findPerson("students",id);
+    const teacher = this.teachers.find((teacher)=>{
+      return teacher.subjects.includes(subject) && teacher.capacityLeft;
+    });
+    if(teacher){
+      teacher.students.push(student);
+      teacher.capacityLeft -= 1;
+    }else {
+      console.log('sorry no teacher available');
     }
   },
   assignTeachersSubjec(id,subject){
-    
-  }
+    const teacher = this.findPerson("teachers",id);
+    if (!teacher.subjects.includes(subject)){
+      teacher.subjects.push(subject)
+    } else{
+      console.log('subject already exists')
+    }
 };
-school.assignStudent(10, "ethics")
-console.log(school.teachers[1])
-
-// function sortFoods(arr){
-//   const obj= {};
-//   arr.forEach((item)=>{
-//     if(obj.hasOwnProperty(item)){
-//       obj[item] += 1;
-//       }else{
-//         obj[item] =1;
-//       }
-//   });
-//   return obj
-// };
