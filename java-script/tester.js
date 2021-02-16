@@ -15,14 +15,9 @@ const school = {
       capacityLeft: 2,
     },
   ],
-  findPerson(type,id){
-    return this[type].find(obj => obj.id == id);
+  findPerson(type, id) {
+    return this[type].findIndex((obj) => obj.id == id);
   },
-
 };
-
-const x = school.findPerson("teachers",1)
-console.log(x)
-delete x.capacityLeft
-console.log(x)
-// if(this.teachers[0].subjects.includes(subject) && this.teachers[0].capacityLeft > 0)
+const x = school.findPerson("teachers", 1);
+console.log(x);
