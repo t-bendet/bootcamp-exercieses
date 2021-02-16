@@ -43,4 +43,5 @@ const school = {
     } else{
       console.log('subject already exists')
     }
+  },
 };
