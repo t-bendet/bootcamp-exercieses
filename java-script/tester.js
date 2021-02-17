@@ -1,23 +1,15 @@
-const school = {
-  teachers: [
-    {
-      id: 1,
-      name: "Pinchas",
-      subjects: ["chemistry", "biology", "physics"],
-      students: [],
-      capacityLeft: 3,
-    },
-    {
-      id: 2,
-      name: "Williams",
-      subjects: ["history", "ethics"],
-      students: [],
-      capacityLeft: 2,
-    },
-  ],
-  findPerson(type, id) {
-    return this[type].findIndex((obj) => obj.id == id);
-  },
-};
-const x = school.findPerson("teachers", 1);
-console.log(x);
+function persistence(num) {
+  let str = num.toString();
+  let times = 0;
+  while (str.length > 1) {
+    str = str
+      .split("")
+      .reduce((acc, item) => acc * item)
+      .toString();
+    times += 1;
+  }
+  return times;
+}
+let x = 39;
+
+console.log(persistence(x));

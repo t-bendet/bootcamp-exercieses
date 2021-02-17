@@ -21,27 +21,27 @@ const school = {
     { id: 12, name: "Old-Timmy", age: 86 },
     { id: 13, name: "Houston", age: 21 },
   ],
-  findPerson(type,id){
-    return this[type].find(obj => obj.id == id);
+  findPerson(type, id) {
+    return this[type].find((obj) => obj.id == id);
   },
   assignStudent(id, subject) {
-    const student = this.findPerson("students",id);
-    const teacher = this.teachers.find((teacher)=>{
+    const student = this.findPerson("students", id);
+    const teacher = this.teachers.find((teacher) => {
       return teacher.subjects.includes(subject) && teacher.capacityLeft;
     });
-    if(teacher){
+    if (teacher) {
       teacher.students.push(student);
       teacher.capacityLeft -= 1;
-    }else {
-      console.log('sorry no teacher available');
+    } else {
+      console.log("sorry no teacher available");
     }
   },
-  assignTeachersSubjec(id,subject){
-    const teacher = this.findPerson("teachers",id);
-    if (!teacher.subjects.includes(subject)){
-      teacher.subjects.push(subject)
-    } else{
-      console.log('subject already exists')
+  assignTeachersSubjec(id, subject) {
+    const teacher = this.findPerson("teachers", id);
+    if (!teacher.subjects.includes(subject)) {
+      teacher.subjects.push(subject);
+    } else {
+      console.log("subject already exists");
     }
   },
 };
