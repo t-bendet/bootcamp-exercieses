@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.flex-con {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80%;
+}
+
+.flex-box {
+  height: 600px;
+  width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.wrapper {
+  margin: 2em;
+  width: 100px;
+  height: 100px;
+}
+.wrapper2 {
+  margin: 2em;
+  width: 400px;
+  height: 400px;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
