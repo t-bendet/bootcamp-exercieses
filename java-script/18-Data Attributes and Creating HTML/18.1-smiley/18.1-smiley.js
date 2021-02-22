@@ -28,3 +28,4 @@ const check = () => {
   }
 };
 btn.addEventListener("click", check);
+const body = document.querySelector("body");
