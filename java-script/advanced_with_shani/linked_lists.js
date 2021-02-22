@@ -15,6 +15,7 @@ class LinkedList {
   }
   add(element) {
     let node = new Node(element);
+    node.id = this.size;
     let current;
     if (this.head == null) {
       this.head = node;
@@ -54,30 +55,59 @@ class LinkedList {
       return -1;
     } else {
       let currentNode = this.head;
-      let prevNode = currentNode;
+      let previousNode = currentNode;
       let count = 0;
       if (k === 0) {
         this.head = currentNode.next;
       } else {
         while (k > count) {
           count++;
-          prevNode = currentNode;
+          previousNode = currentNode;
           currentNode = currentNode.next;
         }
-        prevNode.next = currentNode.next;
+        previousNode.next = currentNode.next;
       }
     }
     this.size -= 1;
   }
+  reverse() {
+    let node = this.head,
+      previous,
+      temporary;
+    while (node) {
+      temporary = node.next;
+      node.next = previous;
+      previous = node;
+      node = temporary;
+    }
+    return previous;
+  }
+  circular() {
+    let first = this.head;
+    let second = this.head;
+    while (second && second.next) {
+      first = first.next;
+      second = second.next.next;
+      if (first === second) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
-
+//TODO add circular with id
 let linked = new LinkedList();
 linked.add(1);
 linked.add(2);
 linked.add(3);
 linked.add(4);
 linked.add(5);
-linked.add(6);
+linked.add(7);
+linked.add(8);
+linked.add(9);
+linked.add(10);
 
-linked.removeKNode(9);
-console.log(linked);
+// linked.reverse();
+linked.last.next = linked.head;
+
+console.log(linked.circular());
