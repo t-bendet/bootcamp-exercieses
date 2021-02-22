@@ -28,17 +28,3 @@ const check = () => {
   }
 };
 btn.addEventListener("click", check);
-howMany.addEventListener("keyup", (Event) => {
-  console.log(howMany);
-  console.log(Event.keyCode);
-  if (Event.keyCode === 13) {
-    check();
-  }
-});
-
-// Execute a function when the user releases a key on the keyboard
-// btn.addEventListener("keyup", function (event) {
-//   if (event.keyCode === 13) {
-//     check();
-//   }
-// });
