@@ -1,11 +1,16 @@
+const elementsMaker = (type, clas, attributes) => {
+  const el = document.createElement(type);
+  el.classList.add(clas);
+  for (const arr of attributes) {
+    el[arr[0]] = arr[1];
+  }
+  return el;
+};
 const body = document.querySelector("body");
-const grid = document.createElement("div");
-grid.classList.add("grid");
-
-frown.src = "./image/frown.png";
-frown.alt = "frown";
-const mydiv2 = document.createElement("div");
-mydiv2.classList.add("wrapper2");
+const all = document.querySelector("*");
+all["box-sizing"] = "border-box";
+all["margin"] = "0px";
+all["padding"] = "0px";
 
 const grid = elementsMaker("div", "grid", [
   ["display", "grid"],
@@ -64,4 +69,3 @@ grid.appendChild(content);
 grid.appendChild(sidebar2);
 grid.appendChild(footer);
 body.appendChild(grid);
-header.background = "red";
