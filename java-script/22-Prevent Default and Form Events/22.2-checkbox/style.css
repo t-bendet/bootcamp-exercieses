@@ -18,7 +18,7 @@ body {
   min-width: 450px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   border: solid 5px black;
 }
@@ -30,11 +30,7 @@ body {
   background: black;
   color: azure;
 }
-.inputs {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
+
 input {
   margin: 5px;
 }
