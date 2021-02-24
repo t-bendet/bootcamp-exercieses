@@ -74,23 +74,22 @@ const players = [
 ];
 const wrapper = document.querySelector(".wrapper");
 
-const generatePlayerCard = (name, age, height) => {
+const generatePlayerCard = (obj) => {
   let div = document.createElement("div");
   div.classList.add("playerCard");
   let h2 = document.createElement("h2");
   let p = document.createElement("p");
   div.appendChild(h2);
   div.appendChild(p);
-  h2.innerHTML = `${name}-${age}`;
-  p.innerHTML = `he is ${height} tall and ${age} years old. In Dog years this person would be ${
-    age * 7
-  }. That would be a tall dog!`;
+  h2.innerHTML = `${obj["name"]}-${obj["age"]}`;
+  p.innerHTML = `he is ${obj["height"]} tall and ${
+    obj["age"]
+  } years old. In Dog years this person would be 
+  ${obj["age"] * 7}. That would be a tall dog!`;
   wrapper.appendChild(div);
 };
-// make a new div with a class of cards
-players.forEach((curr) => {
-  generatePlayerCard(curr["name"], curr["age"], curr["height"]);
-});
+players.forEach(generatePlayerCard);
+
 // make 4 player cards using generatePlayerCard
 
 // append those cards to the div
