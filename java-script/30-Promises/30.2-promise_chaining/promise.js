@@ -1,8 +1,3 @@
-//and then the second function, sortWords(), will sort the words in alphabetical order.
-//If the array contains anything but strings, it should throw an error.
-//Call the functions once with an array of words and call it once with an
-//array that includes at least one item that is not a word.
-//Print the resolve and reject in a .then, .catch.Submit the file to Hive.
 function makeAllCaps(arr) {
   const firstPromise = new Promise(function (resolve, reject) {
     const allStrings = arr.every((char) => typeof char === "string");

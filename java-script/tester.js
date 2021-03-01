@@ -5,16 +5,21 @@ function testfunk(num) {
       : reject(`${num} is smaller then 10`);
   });
 }
-testfunk(12)
-  .then((res) => console.log(res))
-  .catch((rej) => console.log(rej));
+testfunk(12);
 
-new Promise((resolve) => resolve("resolve")).then((resolve) =>
-  console.log(resolve)
+const promise1 = Promise.resolve(3);
+const promise2 = new Promise((resolve, reject) =>
+  setTimeout(reject, 100, "foo")
+);
+const promises = [promise1, promise2, testfunk(12)];
+
+// Promise.allSettled(promises).then((results) =>
+//   results.forEach((result) => console.log(result.status))
 // );
-//and then the second function, sortWords(), will sort the words in alphabetical order.
-//If the array contains anything but strings, it should throw an error.
-//Call the functions once with an array of words and call it once with an
-//array that includes at least one item that is not a word.
-//Print the resolve and reject in a .then, .catch.Submit the file to Hive.
-
+const z = [];
+const x = Promise.allSettled(promises).then((results) =>
+  results.map((result) => {
+    z.push(result);
+  })
+);
+setTimeout(() => console.log(z), 1000);
