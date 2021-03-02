@@ -1,25 +1,43 @@
-function testfunk(num) {
-  return new Promise((resolve, reject) => {
-    num >= 10
-      ? resolve(`${num} is grater then or equel to 10`)
-      : reject(`${num} is smaller then 10`);
-  });
+function intializeGrids() {
+  let worldrow = 12;
+  for (let row = 0; row < worldrow; row++) {
+    let worldcol = 5;
+    let matrix = [];
+    matrix[row] = [];
+    if (row == 0) {
+      const gridHeader = document.createElement("div");
+      gridHeader.style["grid-area"] = "1/1/6/2";
+      gridHeader.classList.add("table-box");
+      gridHeader.classList.add("header");
+    }
+    for (let col = 0; col < worldcol; col++) {
+      matrix[row][col] = document.createElement("div");
+      matrix[row][col].style["grid-area"] = `${row + 1} / ${col + 1} / ${
+        row + 2
+      } / ${col + 1}`;
+      matrix[row][col].classList.add("table-box");
+      if (row == 1) {
+        if (col == 0) {
+          matrix[row][col].innerText = col;
+        }
+        if (col == 1) {
+          matrix[row][col].innerText = col;
+        }
+        if (col == 2) {
+          matrix[row][col].innerText = col;
+        }
+        if (col == 3) {
+          matrix[row][col].innerText = col;
+        }
+        if (col == 4) {
+          matrix[row][col].innerText = col;
+        }
+      } else {
+        matrix[row][col].innerText = "testing";
+        //inject inner html from objects and add classses
+      }
+
+      gridDiv.appendChild(matrix[row][col]);
+    }
+  }
 }
-testfunk(12);
-
-const promise1 = Promise.resolve(3);
-const promise2 = new Promise((resolve, reject) =>
-  setTimeout(reject, 100, "foo")
-);
-const promises = [promise1, promise2, testfunk(12)];
-
-// Promise.allSettled(promises).then((results) =>
-//   results.forEach((result) => console.log(result.status))
-// );
-const z = [];
-const x = Promise.allSettled(promises).then((results) =>
-  results.map((result) => {
-    z.push(result);
-  })
-);
-setTimeout(() => console.log(z), 1000);
