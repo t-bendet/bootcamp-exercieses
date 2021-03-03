@@ -88,7 +88,7 @@ async function starWars() {
     const dataObj = {};
     const personPromise = await fetch(`https://swapi.dev/api/people/${i}/`);
     const personData = await personPromise.json();
-    planetPromise = await fetch(personData.homeworld);
+    planetPromise = await fetch(personData.homeworld); // change to https
     const planetData = await planetPromise.json();
     dataObj.name = personData.name;
     dataObj.hair_color = personData.hair_color;

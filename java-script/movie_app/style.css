@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.nav {
+  padding: 1rem;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #228ba4;
+}
+.serach-bar {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.movie-grid {
+  height: calc(100% - 100px);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas:
+    "title title"
+    "movie-data poster";
+  background: white;
+}
+/* title */
+.title {
+  grid-area: title;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* movie-data */
+
+.movie-data {
+  grid-area: movie-data;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.plot {
+  margin: 0 10px;
+}
+/* poster */
+
+.poster {
+  grid-area: poster;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+p {
+  padding: 5px;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+input {
+  width: 250px;
+  height: 30px;
+  margin: 0.25rem;
+  border-radius: 10px;
+  font-size: 20px;
+}

@@ -4,18 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>github Api</title>
     <link rel="stylesheet" href="style.css" />
+    <title>Movie Api</title>
   </head>
   <body>
     <div class="nav">
-      <h1>enter your search</h1>
       <form class="serach-bar">
         <input class="user-input" type="text" id="fname" name="fname" />
         <input class="submit" type="button" value="submit" />
       </form>
     </div>
-    <div class="card-area"></div>
-    <script src="./github.js"></script>
+    <div class="movie-grid">
+      <div class="title">
+        <h1 class="title-head"></h1>
+        <p class="genre"></p>
+        <p class="released"></p>
+      </div>
+      <div class="movie-data">
+        <p class="plot"></p>
+        <p class="director"></p>
+        <p class="actors"></p>
+        <div class="ratings-flex"></div>
+      </div>
+      <div class="poster"></div>
+    </div>
+    <script src="./movie.js"></script>
   </body>
 </html>
