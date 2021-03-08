@@ -36,10 +36,11 @@ class Point {
 }
 const wayPoint = new Point(1, 3);
 const wayPoint2 = new Point(4, 7);
+const wayPoint3 = new Point(4, 7);
 
 class PointWorld {
   constructor() {
-    this.array = [wayPoint2, wayPoint];
+    this.array = [wayPoint2, wayPoint, wayPoint3];
   }
   reverseSort() {
     let temp = [...this.array].sort(function (a, b) {
@@ -48,7 +49,13 @@ class PointWorld {
     return temp;
   }
   pointUnique() {
-    //reduce
+    let unique = [];
+    this.array.forEach((point) => {
+      if (!unique.find((a) => a.isSame(point))) {
+        unique.push(point);
+      }
+    });
+    return unique;
   }
   sumX() {
     let sum = 0;
@@ -57,6 +64,13 @@ class PointWorld {
     }
     return sum;
   }
+  isPoint(pointIN) {
+    for (const p of this.array) {
+      if (p.isSame(pointIN)) {
+        return p;
+      }
+    }
+  }
 }
 const test = new PointWorld();
-console.log(test.sumX());
+// const v = test.pointUnique();
