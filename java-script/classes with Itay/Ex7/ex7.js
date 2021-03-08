@@ -79,10 +79,21 @@ class Hotel {
     return false;
   }
   HighRoomFree() {
-    let temp = [...this.hotelRooms].sort(function (a, b) {
-      return a.level - b.level;
+    let levels = [];
+    for (const item of this.hotelRooms) {
+      levels.push(item.level);
+    }
+    maxLevel = Math.max(...levels);
+    let roomsArr = [];
+    for (const item of this.hotelRooms) {
+      if (item.level == maxLevel) {
+        roomsArr.push(item);
+      }
+    }
+    let temp = [...roomsArr].sort(function (a, b) {
+      return a.amount - b.amount;
     });
-    higestLevel = temp[-1].level;
+    return temp;
   }
   getAllRooms() {
     let freeRoomsArr = [];
