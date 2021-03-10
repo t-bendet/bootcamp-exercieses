@@ -1,29 +1,10 @@
-const main = new Map();
-//Add item
 function addItem(id, taskName, isCompleted) {
+  const main = new Map();
   main.set(id, { taskName: taskName, isCompleted: isCompleted });
+  return main.has(1);
 }
-addItem(1, "build a TODO app", false);
-addItem(2, "talk to myself", true);
-addItem(3, "go for a walk", false);
-addItem(4, "think about weekend project", false);
-addItem(
-  5,
-  "listen to pini and dont waste time on non importent bits of code",
-  false
-);
-
-// TODO refactor helper function DRY
-
-// function helper() {
-//   if (main.has(this.id)) {
-//     action;
-//     return true;
-//   }
-//   return false;
-// }
-// console.log(helper(this.id, main.get(this.id)));
-
+const test = addItem(1, "build a TODO app", false);
+console.log(test);
 //delete
 function deleteItem(id) {
   if (main.has(id)) {
@@ -32,7 +13,6 @@ function deleteItem(id) {
   }
   return false;
 }
-console.log(deleteItem(2));
 // mark as done
 function markAsDone(id) {
   if (main.has(id)) {
@@ -60,4 +40,5 @@ function list() {
   });
   return temp;
 }
-list();
+
+module.exports = { addItem, deleteItem, markAsDone, unmarkAsDone, list };
