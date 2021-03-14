@@ -1,7 +1,0 @@
-Primitive data types,
-functions, 
-order of operations, 
-truthy and falsey,
-scope, 
-closures,
-DOM, DOM traversing, data attributes.
