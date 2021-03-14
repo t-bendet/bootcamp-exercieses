@@ -1,17 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import "./index.css";
+import ReactDOM from "react-dom";
+import QuizTitle from "./QuizTitle";
+import Q1 from "./Q1";
+import Q1Input from "./Q1Input";
+import Q2 from "./Q2";
+import Q2Input from "./Q2Input";
+if (module.hot) {
+  module.hot.accept();
+}
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const App = () => {
+  return (
+    <div className="quiz">
+      <QuizTitle />
+      <Q1 />
+      <Q1Input />
+      <Q2 />
+      <Q2Input />
+    </div>
+  );
+};
+ReactDOM.render(<App />, document.getElementById("root"));
