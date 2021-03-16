@@ -1,0 +1,21 @@
+.music-box {
+  background-color: aquamarine;
+  height: 250px;
+  min-width: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 1rem;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(36, 93, 159, 1) 31%
+  );
+}
+a {
+  color: aliceblue;
+}
