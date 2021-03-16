@@ -1,0 +1,54 @@
+.box {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 150px;
+  width: 150px;
+  margin: 20px;
+}
+.circle {
+  position: relative;
+  border-radius: 100%;
+  border: solid 5px darkgrey;
+  width: 150px;
+  height: 150px;
+  border-left: #2fdfbc solid 5px;
+  animation: circle 1s infinite linear;
+}
+.ball {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: darkgrey;
+  position: relative;
+  animation: bounce 1s;
+  animation-iteration-count: infinite;
+}
+.colorfull {
+  background-color: red;
+}
+.colorfull .ball {
+  animation: colorfull 1s infinite;
+}
+@keyframes circle {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: initial;
+  }
+  30% {
+    transform: translateY(-50px);
+  }
+  60% {
+    transform: initial;
+  }
+}
+@keyframes colorfull {
+  to {
+    background-color: #2fdfbc;
+  }
+}
