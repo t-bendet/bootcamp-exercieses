@@ -4,6 +4,7 @@ import CustomButton from "./CustomButton";
 
 class App extends React.Component {
   state = { myColor: "" };
+  colorsArr = ["red", "blue", "yellow"];
   logColor = (me) => {
     this.setState({ myColor: me });
   };
@@ -11,18 +12,15 @@ class App extends React.Component {
     return (
       <div className="container">
         <div>
-          <CustomButton onClick={this.logColor} name="yellow" />
-          <CustomButton onClick={this.logColor} name="red" />
-          <CustomButton onClick={this.logColor} name="blue" />
+          {this.colorsArr.map((color) => (
+            <CustomButton onClick={this.logColor} name={color} />
+          ))}
         </div>
         <div>
-          <h1>the color selected is:{this.state.myColor} </h1>
+          <h1>the color selected is: {this.state.myColor} </h1>
         </div>
       </div>
     );
   }
 }
 export default App;
-//
-// <CustomButton name="blue" />
-// <CustomButton name="red" />
