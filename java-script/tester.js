@@ -1,17 +1,19 @@
-const handleLoading = () => {
-  const spinner = document.querySelector(".spinner");
-  if (state.isLoading) {
-    spinner.classList.remove("none");
-
-    buttons.forEach((button) => {
-      button.disabled = true;
-    });
-  } else {
-    spinner.classList.add("none");
-    buttons.forEach((button) => {
-      button.disabled = false;
-    });
-  }
-};
-handleLoading();
-matrix[row][col].setAttribute("data-row", row + 1);
+// the arguments object() -  a local variable available within all non-arrow functions
+function tester(parm1, parm2, parm3) {
+  console.log(arguments.callee);
+  console.log(arguments["1"]);
+}
+// Array.from()
+const mapper = new Map([
+  ["1", "a"],
+  ["2", "b"],
+]);
+Array.from(mapper.values());
+Array.from(mapper.keys());
+// spread oparetor and rest parms
+function testMore(a, b, ...parms) {
+  //rest parms
+  console.log(a + b);
+  console.log(...parms); // spread oparetor
+  // a variadic function is a function of indefinite arity, i.e., one which accepts a variable number of arguments.
+}
