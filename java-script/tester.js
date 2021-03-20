@@ -17,3 +17,4 @@ function testMore(a, b, ...parms) {
   console.log(...parms); // spread oparetor
   // a variadic function is a function of indefinite arity, i.e., one which accepts a variable number of arguments.
 }
+console.log("10" + "3");
