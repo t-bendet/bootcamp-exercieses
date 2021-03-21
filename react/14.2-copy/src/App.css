@@ -4,3 +4,17 @@
   justify-content: center;
   align-items: center;
 }
+form {
+  display: flex;
+  height: 200px;
+  width: 300px;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  border: solid 2px black;
+}
+
+label {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
