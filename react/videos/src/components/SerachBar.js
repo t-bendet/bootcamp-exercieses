@@ -6,7 +6,7 @@ class SerachBar extends React.Component {
   };
   onFormSubmit = (e) => {
     e.preventDefault();
-    // callback from parent
+    this.props.onFormSubmit(this.state.term);
   };
   render() {
     return (
