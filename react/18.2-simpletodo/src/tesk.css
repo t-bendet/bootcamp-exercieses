@@ -1,0 +1,7 @@
+.container {
+  display: flex;
+  padding: 5px;
+}
+.check {
+  text-decoration: line-through;
+}
