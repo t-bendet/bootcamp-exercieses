@@ -1,8 +1,5 @@
-.overflow {
+.container {
   padding: 3px;
-  width: min-content;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  max-width: 500px;
   border: 1px solid black;
 }

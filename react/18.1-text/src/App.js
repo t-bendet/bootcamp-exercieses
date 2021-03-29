@@ -1,13 +1,13 @@
 import React from "react";
 import Text from "./Text";
 
+const lorem =
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure soluta non a voluptas. Itaque aliquam modi, veritatis libero ipsum quae quis reiciendis accusantium reprehenderit aliquid, ullam sunt excepturi animi aut?";
+
 const App = () => {
   return (
     <div>
-      <Text
-        string={"my text mu sssssss ddddddddddd dd d dsdsddsssssss"}
-        maxLength={10}
-      />
+      <Text string={lorem + lorem + lorem} maxLength={250} />
     </div>
   );
 };
