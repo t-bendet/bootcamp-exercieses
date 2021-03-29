@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+const App = () => {
+  const [time, setTime] = useState(60);
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <form>
+        <label>Seconds</label>
+        <input
+          type="number"
+          value={time}
+          onChange={(e) => setTime(e.target.value)}
+        ></input>
+        <label>Minutes</label>
+        <input
+          type="number"
+          value={time / 60}
+          onChange={(e) => setTime(e.target.value * 60)}
+        ></input>
+        <label>Hours</label>
+        <input
+          type="number"
+          value={time / 60 / 60}
+          onChange={(e) => setTime(e.target.value * 60 * 60)}
+        ></input>
+      </form>
     </div>
   );
-}
+};
 
 export default App;
