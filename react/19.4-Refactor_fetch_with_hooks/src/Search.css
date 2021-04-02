@@ -1,0 +1,10 @@
+.bar {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  height: 30px;
+}

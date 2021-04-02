@@ -1,0 +1,17 @@
+.card {
+  height: 150px;
+  width: 150px;
+  border: solid 3px black;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.card-con {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
