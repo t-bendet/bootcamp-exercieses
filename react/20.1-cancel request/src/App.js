@@ -1,11 +1,15 @@
-import React from 'react';
-
-const App = ()=> {
+import React, { useState } from "react";
+import MyDisplay from "./myDisplay";
+const App = () => {
+  const [toggle, setToggle] = useState(false);
   return (
     <div>
-    	<h1>App</h1>
+      <button onClick={() => setToggle(!toggle)}>
+        {toggle ? "Hide Data" : "Show Data"}
+      </button>
+      {toggle && <MyDisplay />}
     </div>
   );
-}
+};
 
 export default App;
