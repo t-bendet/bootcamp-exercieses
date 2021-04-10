@@ -1,7 +1,7 @@
 import { Component } from "react";
 import Card from "./Card";
 import Unsplash from "./apis/Unsplash";
-
+// TODO key should be index in array
 class Carousel extends Component {
   // config image theme
   state = { images: [], imageTheme: "skydive" };
