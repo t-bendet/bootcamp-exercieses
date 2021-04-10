@@ -1,11 +1,15 @@
-import React from "react";
-import Carousel from "./Carousel";
+import React, { useState } from "react";
 
-function App() {
+function App({ initialCount }) {
+  const [count, setCount] = useState(initialCount);
+
   return (
-    <div className="ui container">
-      <h1>tal</h1>
-    </div>
+    <>
+      Count: {count}
+      <button onClick={() => setCount(initialCount)}>Reset</button>
+      <button onClick={() => setCount(count - 1)}>-</button>
+      <button onClick={() => setCount((prevCount) => prevCount + 1)}>+</button>
+    </>
   );
 }
 
