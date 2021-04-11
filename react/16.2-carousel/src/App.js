@@ -1,14 +1,33 @@
 import React, { useState } from "react";
+import TreeView from "./stam/TreeView";
 
-function App({ initialCount }) {
-  const [count, setCount] = useState(initialCount);
+const data = {
+  lorem: {
+    ipsum: "dolor sit",
+    amet: {
+      consectetur: "adipiscing",
+      elit: [
+        "duis",
+        "vitae",
+        {
+          semper: "orci",
+        },
+        {
+          est: "sed ornare",
+        },
+        "etiam",
+        ["laoreet", "tincidunt"],
+        ["vestibulum", "ante"],
+      ],
+    },
+    ipsum: "primis",
+  },
+};
 
+function App() {
   return (
     <>
-      Count: {count}
-      <button onClick={() => setCount(initialCount)}>Reset</button>
-      <button onClick={() => setCount(count - 1)}>-</button>
-      <button onClick={() => setCount((prevCount) => prevCount + 1)}>+</button>
+      <TreeView data={data} name="data" />
     </>
   );
 }
