@@ -8,6 +8,7 @@ if (!fs.existsSync("data.json")) {
 }
 const loadUsers = () => {
   const dataBuffer = fs.readFileSync("data.json");
+  console.log(dataBuffer);
   const dataJSON = dataBuffer.toString();
   return JSON.parse(dataJSON);
 };
