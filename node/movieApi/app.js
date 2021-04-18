@@ -1,8 +1,11 @@
 const express = require("express");
 const { getMoviesList, addMovie, getMovie, deleteMovie } = require("./utils");
 const app = express();
+const cors = require("cors");
+
 app.use(express.json());
 // TODO add status codes and error handling
+app.use(cors());
 
 //get all Movies
 app.get("/api/movies", (req, res) => {
@@ -37,6 +40,6 @@ app.delete("/api/movies/:id", (req, res) => {
 });
 
 // PORT
-app.listen(3000, () => {
-  console.log("Server is up on port 3000.");
+app.listen(9000, () => {
+  console.log("Server is up on port 9000.");
 });
