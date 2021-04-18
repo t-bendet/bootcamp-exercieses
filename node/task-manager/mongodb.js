@@ -11,6 +11,29 @@ MongoClient.connect(
       return console.log("Unable to connect to database!");
     }
     const db = client.db(databaseName);
+
+    // db.collection("users")
+    //   .find({ age: 34 })
+    //   .count((error, count) => {
+    //     console.log(count);
+    //   });
+
+    // db.collection("users")
+    //   .find({ age: 34 })
+    //   .toArray((error, users) => {
+    //     console.log(users);
+    //   });
+
+    // db.collection("users").findOne(
+    //   { _id: new ObjectID("607aff228293002034ca531d") },
+    //   (error, user) => {
+    //     if (error) {
+    //       return console.log("Unable to fetch ");
+    //     }
+
+    //     console.log(user);
+    //   }
+    // );
     // db.collection("users").insertOne(
     //   {
     //     name: "tal",
