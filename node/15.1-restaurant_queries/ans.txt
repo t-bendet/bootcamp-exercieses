@@ -1,0 +1,26 @@
+use findMyRestaurant
+coll = db.restaurants
+coll.insert(data)
+
+1.1)coll.find().toArray()
+1.2)coll.find({cuisine:"asian"}).toArray()
+1.3)coll.find({kosher:true}).toArray()
+1.4)coll.find({"address.city":"Tel Aviv"}).toArray()
+1.5)coll.find({"address.street":"Balfur 15"}).toArray()
+1.6)coll.find({"address.coordinates":[-77.46574,40.6774]}).toArray()
+1.7)coll.find().sort({name:1}).pretty()
+1.8)coll.find().sort({city:1}).pretty()
+1.9)coll.update({name:"bombay"},$set{name:"bombay2")})
+1.10)coll.updateOne({"_id" : ObjectId("607d3a7151c420821f4ed4cc")}, {$push: {"reviews":{"date" : new Date(), "score" : 8}}})
+1.11)coll.updateMany({},{$set:{"kosher":true}})
+1.12)coll.deleteOne({"_id" : ObjectId("607d3a7151c420821f4ed4cc")})
+1.13)coll.deleteMany({"_id":{$exists:true}})
+1.14)coll.updateOne({"_id":ObjectId("607d5e2318f72bc046f5ddb5") },{$inc:{"reviews.0.score":2}} )
+1.15)coll.updateOne({"_id":ObjectId("607d5e2318f72bc046f5ddb5") },{$inc:{"reviews.0.score":-1}} )
+2.1)coll.find().forEach(res=>printjson(res.name))
+2.2)coll.find().forEach(res=>printjson(res.address.city))
+2.3)coll.find().forEach(res=>printjson(res.address.coordinates))
+3.1)coll.find({name:/^t/}).pretty()
+3.2)coll.find().count()
+3.3)coll.find( { "reviews": { $elemMatch: { date: ISODate("2020-01-01T00:00:00Z") } } } ).pretty()
+
