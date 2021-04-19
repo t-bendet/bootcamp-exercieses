@@ -11,7 +11,63 @@ MongoClient.connect(
       return console.log("Unable to connect to database!");
     }
     const db = client.db(databaseName);
-
+    db.collection("tesks")
+      .deleteOne({
+        description: "walk the dog",
+      })
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    // db.collection("users")
+    //   .deleteMany({
+    //     age: 34,
+    //   })
+    //   .then((result) => {
+    //     console.log(result);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+    // const updatePromise = db.collection("tesks").updateMany(
+    //   {
+    //     completed: false,
+    //   },
+    //   {
+    //     $set: {
+    //       completed: true,
+    //     },
+    //   }
+    // );
+    // updatePromise
+    //   .then((result) => {
+    //     console.log(result);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+    // const updatePromise = db.collection("users").updateOne(
+    //   {
+    //     _id: new ObjectID("607ad96cb73dab3458fa70b8"),
+    //   },
+    //   {
+    //     $set: {
+    //       name: "tom bombadil",
+    //     },
+    //     $inc: {
+    //       age: -1,
+    //     },
+    //   }
+    // );
+    // updatePromise
+    //   .then((result) => {
+    //     console.log(result);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
     // db.collection("users")
     //   .find({ age: 34 })
     //   .count((error, count) => {
