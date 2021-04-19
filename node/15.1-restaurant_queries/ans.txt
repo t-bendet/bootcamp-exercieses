@@ -9,7 +9,7 @@ coll.insert(data)
 1.5)coll.find({"address.street":"Balfur 15"}).toArray()
 1.6)coll.find({"address.coordinates":[-77.46574,40.6774]}).toArray()
 1.7)coll.find().sort({name:1}).pretty()
-1.8)coll.find().sort({city:1}).pretty()
+1.8)coll.find().sort({address.city:1}).pretty()
 1.9)coll.update({name:"bombay"},$set{name:"bombay2")})
 1.10)coll.updateOne({"_id" : ObjectId("607d3a7151c420821f4ed4cc")}, {$push: {"reviews":{"date" : new Date(), "score" : 8}}})
 1.11)coll.updateMany({},{$set:{"kosher":true}})
@@ -23,4 +23,19 @@ coll.insert(data)
 3.1)coll.find({name:/^t/}).pretty()
 3.2)coll.find().count()
 3.3)coll.find( { "reviews": { $elemMatch: { date: ISODate("2020-01-01T00:00:00Z") } } } ).pretty()
+4.1)coll.aggregate([{$group:{ "_id":null, "avg":{ $avg:"$reviews.score"}}}])
+4.2)coll.aggregate([{$project:{ "Average score": { $avg: "$reviews.score" }}}])
 
+*4.1- Write a mongoDb query to all restaurants average score
+db.restaurants.aggregate([
+    {$unwind:"$reviews"},
+    {$group: {_id:"$name",avg:{$avg:"$reviews.score"}}}
+])
+​
+* 4.2- Write a mongoDb query to display a specific restaurants average score
+db.restaurants.aggregate([
+    {$match:{_id:ObjectId("5ffab76433ab673d82bbb2cc")}},
+    {$unwind:"$reviews"},
+    {$group: {_id:"$name",avg:{$avg:"$reviews.score"}}}
+])
+​
