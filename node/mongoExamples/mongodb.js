@@ -144,3 +144,44 @@ MongoClient.connect(
     // );
   }
 );
+
+//
+const me = new User({
+  name: "    tal   ",
+  email: "      TALBENDET@dsd.com     ",
+  password: "  dmkmydkfldk    ",
+});
+
+me.save()
+  .then(() => {
+    console.log(me);
+  })
+  .catch((error) => {
+    console.log("Error!", error);
+  });
+
+const Task = mongoose.model("Task", {
+  description: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  completed: {
+    type: Boolean,
+    default: false,
+  },
+});
+
+const task = new Task({
+  description: "Learn the Mongoose library",
+  completed: false,
+});
+
+task
+  .save()
+  .then(() => {
+    console.log(task);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
