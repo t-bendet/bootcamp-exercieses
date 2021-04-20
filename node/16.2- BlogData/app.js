@@ -31,6 +31,13 @@ MongoClient.connect(
         console.log(result.ops);
       }
     );
+    let currentId;
+    db.collection("users").findOne({ name: "Tal Bendet" }, (error, user) => {
+      if (error) {
+        return console.log("Unable to fetch ");
+      }
+      currentId = user._id;
+    });
     //3. Create at least two posts
     //4. Create at least 1 comment on a post.
     db.collection("posts").insertMany(
@@ -39,7 +46,7 @@ MongoClient.connect(
           title: "DAD jokes 101",
           content: `Why did the invisible man turn down the job offer?
           He couldn’t see himself doing it.`,
-          owner: ObjectID("607e9473d4d6c53ac82509ae"),
+          owner: ObjectID(currentId),
           comments: [
             {
               content: "Wow amazing",
@@ -50,7 +57,7 @@ MongoClient.connect(
           title: "DAD jokes intermediate",
           content: ` Why did the coffee file a police report?
           It got mugged.`,
-          owner: ObjectID("607e9473d4d6c53ac82509ae"),
+          owner: ObjectID(currentId),
           comments: [
             {
               content: "You suckkkkkkkkkk",
