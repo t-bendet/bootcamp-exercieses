@@ -4,8 +4,8 @@ const express = require("express");
 const uniqueValidator = require("mongoose-unique-validator");
 
 mongoose.connect("mongodb://127.0.0.1:27017/e-commerce", {
-  useNewUrlParser: true, //what is this?
-  useCreateIndex: true, //what is this?
+  useNewUrlParser: true,
+  useCreateIndex: true,
 });
 
 const Product = mongoose.model("Product", {
