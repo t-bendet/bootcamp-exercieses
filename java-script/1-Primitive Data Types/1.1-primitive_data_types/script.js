@@ -1,4 +1,4 @@
-const stringi = "hello";
+const stringer = "hello";
 const num = 33;
 const obj = {
   name: "tal",
@@ -6,15 +6,15 @@ const obj = {
 };
 const bool = true;
 obj.last = null;
-let dontDefineMe;
+let donaDefineMe;
 const sym = Symbol("baba");
 console.log(
-  typeof stringi,
+  typeof stringer,
   typeof num,
   typeof obj,
   typeof bool,
   typeof obj.last,
   obj.last,
-  typeof dontDefineMe,
+  typeof donaDefineMe,
   typeof sym
 );
